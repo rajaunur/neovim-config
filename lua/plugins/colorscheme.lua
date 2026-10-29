@@ -1,19 +1,28 @@
 local M = {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-}
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000, -- Pastikan dimuat paling awal agar warna tema tidak berantakan
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha",
+        transparent_background = true,
+        show_end_of_buffer = false,
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          telescope = true,
+          notify = false,
+          mini = {
+            enabled = true,
+          },
+        },
+      })
 
-M.config = function()
-  require("tokyonight").setup({
-    transparent = true,
-    styles = {
-      sidebars = "transparent",
-      -- keywords = { italic = false },
-      floats = "transparent",
-    },
-  })
-  vim.cmd([[colorscheme tokyonight]])
-end
+      vim.cmd.colorscheme("catppuccin-nvim")
+    end,
+  },
+}
 
 return M

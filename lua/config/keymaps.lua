@@ -14,8 +14,8 @@ keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
 keymap.set("n", "<leader>Q", "<cmd>qa<CR>", opts)
 
 -- Windows
-keymap.set("n", "<leader>s\\", "<cmd>vsplit<CR>", opts)
-keymap.set("n", "<leader>s-", "<cmd>split<CR>", opts)
+keymap.set("n", "<leader>sv", "<cmd>vsplit<CR>", opts)
+keymap.set("n", "<leader>sh", "<cmd>split<CR>", opts)
 
 -- Comment & Indent
 keymap.set("v", "<", "<gv")
